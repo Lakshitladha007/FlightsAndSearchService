@@ -1,1 +1,1 @@
-// Database confid setup
+// Database config setup
