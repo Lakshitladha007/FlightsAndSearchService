@@ -1,15 +1,21 @@
-/ Overall structure of the project
-(We will doing role based development instead of feature  based)
+# Welcome to Flightd service
 
-  -src/
-      index.js //(main server file)
-      models/
-      controllers/
-      middlewares/
-      services/
-      utils/  (Any extra set of utility function or set of constants we can add here, its kind of helper file/folder)
-      config/(In this folder we store database configuartions and other important configures)
-      repositery/
+## Project Setup
 
+- clone the project on your local
+- Execute "npm install" on the same path as your root directory of the downloaded project
+- Create a `.env` file in the root directory and add the following environment variable
+     - `PORT=3000`
+- Inside the `src/config` folder create a new file `config.json` and then add the following piece of code
 
-   -tests/
+```
+{
+  "development": {
+    "username": "root",
+    "password": "MERN",
+    "database": "Flights_Search_Db_Dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
+```
