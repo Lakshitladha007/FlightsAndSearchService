@@ -1,4 +1,4 @@
-# Welcome to Flightd service
+# Welcome to Flight service
 
 ## Project Setup
 
@@ -21,3 +21,16 @@
 ```
 
 -- Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`
+
+
+
+## DB Design
+
+  -Airplane Table
+  -Flight Table
+  -Airport Table
+  -City Table
+
+  - A flight belongs to an airplane but one airplane can be used in multiple flights
+  - A city can have many airports but a airport belongs to a particular city
+  - One airport can have many flights but a flight belongs to one airport only.
