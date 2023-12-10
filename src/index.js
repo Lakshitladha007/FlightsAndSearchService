@@ -2,8 +2,8 @@
 const express=require("express");
 const bodyParser=require("body-parser");
 
-
 const { PORT }=require('./config/serverConfig');
+const CityRepository=require('./repository/city-repository');
 
 const setupAndStartServer= async()=>{
 
@@ -15,7 +15,9 @@ const setupAndStartServer= async()=>{
     
     app.listen(PORT,()=>{  // this PORT variable is directly being accessed from ".env" file
       console.log(`Server started at ${PORT}`);
-    //   console.log(process.env);
+      const repo= new CityRepository();
+      
+      repo.createCity({name:"New Delhi"});
     });
 }
 
