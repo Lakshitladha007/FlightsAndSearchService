@@ -1,5 +1,7 @@
 //In order to assure city repository and all works fine, we need to have access to the models. So we are requiring models. 
-const {City}=require ("../models/index");  // We will add the path of 'index' file as it will give access to all the models present in the folder
+const {City}=require ("../models/index");  // We will add the path of 'index' file as it will give access to all the models 
+                                           //present in the folder, as "index" file contains logic due to which all models 
+                                           //can be accessed form it
 
 class CityRepository {
     async createCity({name}){
@@ -7,6 +9,7 @@ class CityRepository {
             const city=await City.create({name});
             return city;
         } catch(error){
+            console.log("Something went wrong in Repository layer");
             throw {error};
         }
     }
@@ -19,9 +22,32 @@ class CityRepository {
                 }
               });
         }catch(error){
-           throw {error}; 
+            console.log("Something went wrong in Repository layer");
+            throw {error};
         }
     }
+
+    async updateCity(cityId){
+        try{
+           
+              
+
+        }catch(error){
+
+        }
+    }
+
+    async getCity(cityId){
+        try{
+            const city=await City.findByPk(cityId);        // findByPk fxn directly helps us to search using "primary_key".
+            return city;
+          } catch(error){
+            console.log("Something went wrong in Repository layer");
+            throw {error};
+          }
+        }
+    
 }
+
 
 module.exports = CityRepository;
