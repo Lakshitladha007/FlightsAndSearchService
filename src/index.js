@@ -13,9 +13,10 @@ const setupAndStartServer= async()=>{
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
     
-    app.listen(PORT,()=>{  // this PORT variable is directly being accessed from ".env" file
+    app.listen(PORT, ()=>{  // this PORT variable is directly being accessed from ".env" file
       console.log(`Server started at ${PORT}`);
-      const repo= new CityRepository(); 
+
+      const repo= new CityRepository(); // making object of class "CityRepository"
       repo.createCity({name:"New Delhi"});
     });
 }

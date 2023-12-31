@@ -21,26 +21,33 @@ class CityRepository {
                     id: cityId
                 }
               });
+              return true;
         }catch(error){
             console.log("Something went wrong in Repository layer");
             throw {error};
         }
     }
 
-    async updateCity(cityId){
+    async updateCity(cityId, data){      // passing 2 parameters, 1st to identify which column needs to be updated and 2nd 
+                                         //with which data it is be updated
         try{
-           
-              
-
+            const city= await City.update(data, {
+                where: {
+                    id:cityID
+                }
+            });
+            return city;
         }catch(error){
-
+            console.log("Something went wrong in Repository layer");
+            throw {error};
         }
     }
 
     async getCity(cityId){
         try{
-            const city=await City.findByPk(cityId);        // findByPk fxn directly helps us to search using "primary_key".
-            return city;
+            const city=await City.findByPk(cityId);        // findByPk fxn directly helps us to search using 
+                                                           //"primary_key".
+             return city;
           } catch(error){
             console.log("Something went wrong in Repository layer");
             throw {error};
