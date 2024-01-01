@@ -38,7 +38,7 @@ class CityRepository {
         try{
             const city= await City.update(data, {
                 where: {
-                    id:cityID
+                    id:cityId
                 }
             });
             return city;
@@ -53,7 +53,7 @@ class CityRepository {
             const city=await City.findByPk(cityId);        // findByPk fxn directly helps us to search using 
                                                            //"primary_key".
              return city;
-          } catch(error){
+          }catch(error){
             console.log("Something went wrong in Repository layer");
             throw {error};
           }
