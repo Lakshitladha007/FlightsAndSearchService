@@ -4,7 +4,7 @@ const { CityService}=require("../services/index");
 const cityService= new CityService(); // creating CityService Object
 
 //POST
-const create=async(req, res)=>{
+const create=async (req, res)=>{
     try{
         const city=await cityService.createCity(req.body);
         return res.status(201).json({
@@ -18,7 +18,7 @@ const create=async(req, res)=>{
         console.log(error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             messgae:"Not able to create a city",
             err: error
         })
@@ -29,9 +29,9 @@ const create=async(req, res)=>{
 //DELETE ->/cit/:id
 const destroy=async(req,res)=>{
     try{
-        const response=await cityService.destroy(req.params.id);
+        const response=await cityService.deleteCity(req.params.id);
         return res.status(200).json({
-            data: city,
+            data: response,
             success:true,
             message:" successfully deleted a city",
             err:{}
@@ -41,7 +41,7 @@ const destroy=async(req,res)=>{
         console.log(error);
         return res.status(500).json({
             data:{},
-            sucess:false,
+            success:false,
             messgae:"Not able to delete a city",
             err: error
         })
@@ -89,4 +89,10 @@ const update= async ( req, res)=>{
             err: error
         })
     }
+}
+module.exports={
+    create,
+    destroy,
+    get,
+    update
 }

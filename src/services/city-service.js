@@ -1,6 +1,7 @@
 const {CityRepository}=require("../repository/index");
 
 
+
 class CityService{
 
     constructor(){
@@ -12,7 +13,7 @@ class CityService{
             return city;
         }
         catch(error){
-                console.log("Something went wrong in Repository layer");
+                console.log("Something went wrong in Service layer");
                 throw {error};
         }
     }
@@ -23,7 +24,7 @@ class CityService{
               return response;
     }
     catch(error){
-        console.log("Something went wrong in Repository layer");
+        console.log("Something went wrong in Service layer");
         throw {error};
     }
 }
@@ -34,7 +35,7 @@ class CityService{
             return city;  
         }
         catch(error){
-            console.log("Something went wrong in Repository layer");
+            console.log("Something went wrong in Service layer");
             throw {error};
         }
     }
@@ -44,10 +45,12 @@ class CityService{
             return city;
         }
         catch(error){
-            console.log("Something went wrong in Repository layer");
+            console.log("Something went wrong in service layer");
             throw {error};
         }
     }
 
 
 };
+
+module.exports= CityService;

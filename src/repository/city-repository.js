@@ -7,7 +7,7 @@ const {City}=require ("../models/index");  // We will add the path of 'index' fi
 
 class CityRepository {
 
-    async createCity({name}){
+    async createCity({ name }){
         try{
             const city=await City.create({
                 name
